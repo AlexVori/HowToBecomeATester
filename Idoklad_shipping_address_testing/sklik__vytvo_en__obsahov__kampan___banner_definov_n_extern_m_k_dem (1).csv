@@ -1,0 +1,370 @@
+"ID","Title","Expected Result","Preconditions","Section Description","Steps","Steps","Steps (Additional Info)","Steps (Expected Result)"
+"C1","denní rozpočet [1000Kč(default)]způsob zpoplatnění [CPC] cena za proklik [5,00 Kč(default)] Rozměr banneru[970x210] Externí kód banneru [opravený syntax]","Kampaň je úspěšně vytvořena s odpovídajícími daty a bannerem.
+      
+ ![](index.php?/attachments/get/23)     ![](index.php?/attachments/get/24) 
+Request z DevTools odeslaný v okamžiku vytvoření kampaně:
+
+URL: https://www.sklik.cz/api/v1/campaigns
+
+Payload: 
+{items: [{paymentMethod: """"cpc"""", type: """"context"""", name: """"Kampaň_test_cpc_default"""",…}]}
+items: [{paymentMethod: """"cpc"""", type: """"context"""", name: """"Kampaň_test_cpc_default"""",…}]
+
+Response:
+{
+    """"items"""": [
+        {
+            """"groups"""": [
+                {
+                    """"adverts"""": {
+                        """"externalAds"""": [
+                            672489129
+                        ]
+                    },
+                    """"dynamicTemplates"""": [],
+                    """"id"""": 156724795,
+                    """"intents"""": [],
+                    """"interests"""": [],
+                    """"keywords"""": [],
+                    """"negativePureRetargetingItemIds"""": [],
+                    """"placements"""": [],
+                    """"productGroups"""": [],
+                    """"pureRetargetingItemIds"""": [],
+                    """"topicCategoryIds"""": [],
+                    """"topics"""": []
+                }
+            ],
+            """"id"""": 7230136
+        }
+    ]
+}","Uživatel používá Google Chrome Verze 135.0.7049.115 (Oficiální sestavení) (64bitový)
+Uživatel má vypnutý adblock (pro správné zobrazení banneru)
+Uživatel má účet na stránce sklik.cz a je přihlášen.","","1. Klik na """"Kampaně"""" (menu horní lišta)
+2. Klik na """"Vytvořit kampaň""""
+3. Klik na """"Obsahová kampaň""""
+4. Vyplnit formulář následujícími daty:
+Název Kampaně: """"Kampaň_test_cpc_default""""
+Nastavení Rozpočtu (Denní rozpočet): 1000 (Kč)
+Název sestavy: """"Sestava_test_default""""
+Výchozí cena za proklik: 5,00 (Kč)
+5. Klik na """"Pokračovat""""
+6. Klik na """"Banner""""
+7. Klik na """"Pokračovat""""
+8. Klik na """"Externí kód""""
+9. Vyplnit formulář následujícími daty:
+Rozměry: 970x210
+Název externího kódu: Banner_test
+Externí kód (vložit bez oblých závorek):  ( <script language=""""javascript"""" src=""""https://track.adform.net/adfscript/?bn=38520900;encodedclick=__SKLIK_CLICKTHRU_URL__""""></script> )
+10. Klik na """"Vytvořit externí kód""""
+11. Na načteném náhledu kampaně ověřím, že se vytvořila s korektními daty. 
+12. Klik na """"Reklamy""""
+13. Najet kurzorem na vytvořenou reklamu a klik na ikonku oka
+14. Vizuální kontrola správného zobrazení banneru","","",""
+"C3","denní rozpočet [1000Kč(default)]způsob zpoplatnění [CPT] cena za tisíc zobrazení [50 Kč(default)] Rozměr banneru[970x210] Externí kód banneru [opravený syntax]","Kampaň je úspěšně vytvořena s odpovídajícími daty a bannerem.
+      
+ ![](index.php?/attachments/get/8)     ![](index.php?/attachments/get/10) 
+Request z DevTools odeslaný v okamžiku vytvoření kampaně:
+
+URL: https://www.sklik.cz/api/v1/campaigns
+
+Payload: 
+{items: [{paymentMethod: """"cpm"""", type: """"context"""", name: """"Kampaň_test_cpt_default"""",…}]}
+items: [{paymentMethod: """"cpm"""", type: """"context"""", name: """"Kampaň_test_cpt_default"""",…}]
+
+Response:
+{
+    """"items"""": [
+        {
+            """"groups"""": [
+                {
+                    """"adverts"""": {
+                        """"externalAds"""": [
+                            672490628
+                        ]
+                    },
+                    """"dynamicTemplates"""": [],
+                    """"id"""": 156725455,
+                    """"intents"""": [],
+                    """"interests"""": [],
+                    """"keywords"""": [],
+                    """"negativePureRetargetingItemIds"""": [],
+                    """"placements"""": [],
+                    """"productGroups"""": [],
+                    """"pureRetargetingItemIds"""": [],
+                    """"topicCategoryIds"""": [],
+                    """"topics"""": []
+                }
+            ],
+            """"id"""": 7230175
+        }
+    ]
+}
+  ","Uživatel používá Google Chrome Verze 135.0.7049.115 (Oficiální sestavení) (64bitový)
+Uživatel má vypnutý adblock (pro správné zobrazení banneru)
+Uživatel má účet na stránce sklik.cz a je přihlášen.
+","","1. Klik na """"Kampaně"""" (menu horní lišta)
+2. Klik na """"Vytvořit kampaň""""
+3. Klik na """"Obsahová kampaň""""
+4. Vyplnit formulář následujícími daty:
+Název Kampaně: """"Kampaň_test_cpt_default""""
+Nastavení Rozpočtu (Denní rozpočet): 1000 (Kč)
+Název sestavy: """"Sestava_test_default""""
+Výchozí cena za tisíc zobrazení: 50 (Kč)
+5. Klik na """"Pokračovat""""
+6. Klik na """"Banner""""
+7. Klik na """"Pokračovat""""
+8. Klik na """"Externí kód""""
+9. Vyplnit formulář následujícími daty:
+Rozměry: 970x210
+Název externího kódu: Banner_test
+Externí kód (vložit bez oblých závorek):  ( <script language=""""javascript"""" src=""""https://track.adform.net/adfscript/?bn=38520900;encodedclick=__SKLIK_CLICKTHRU_URL__""""></script> )
+10. Klik na """"Vytvořit externí kód""""
+11. Na načteném náhledu kampaně ověřím, že se vytvořila s korektními daty. 
+12. Klik na """"Reklamy""""
+13. Najet kurzorem na vytvořenou reklamu a klik na ikonku oka
+14. Vizuální kontrola správného zobrazení banneru","","",""
+"C4","denní rozpočet [5 000 000Kč(max)]způsob zpoplatnění [CPC] cena za proklik [1 000,00 Kč(max)] Rozměr banneru[970x210] Externí kód banneru [opravený syntax]","Kampaň je úspěšně vytvořena s odpovídajícími daty a bannerem.
+    
+   ![](index.php?/attachments/get/17)   ![](index.php?/attachments/get/18) 
+    
+Request z DevTools odeslaný v okamžiku vytvoření kampaně:
+
+URL: https://www.sklik.cz/api/v1/campaigns
+
+Payload: 
+{items: [{paymentMethod: """"cpc"""", type: """"context"""", name: """"Kampaň_test_cpc_max"""",…}]}
+
+Response:
+{
+    """"items"""": [
+        {
+            """"groups"""": [
+                {
+                    """"adverts"""": {
+                        """"externalAds"""": [
+                            672490841
+                        ]
+                    },
+                    """"dynamicTemplates"""": [],
+                    """"id"""": 156726084,
+                    """"intents"""": [],
+                    """"interests"""": [],
+                    """"keywords"""": [],
+                    """"negativePureRetargetingItemIds"""": [],
+                    """"placements"""": [],
+                    """"productGroups"""": [],
+                    """"pureRetargetingItemIds"""": [],
+                    """"topicCategoryIds"""": [],
+                    """"topics"""": []
+                }
+            ],
+            """"id"""": 7230182
+        }
+    ]
+}","Uživatel používá Google Chrome Verze 135.0.7049.115 (Oficiální sestavení) (64bitový)
+Uživatel má vypnutý adblock (pro správné zobrazení banneru)
+Uživatel má účet na stránce sklik.cz a je přihlášen.","","1. Klik na """"Kampaně"""" (menu horní lišta)
+2. Klik na """"Vytvořit kampaň""""
+3. Klik na """"Obsahová kampaň""""
+4. Vyplnit formulář následujícími daty:
+Název Kampaně: """"Kampaň_test_cpc_max""""
+Nastavení Rozpočtu (Denní rozpočet): 5 000 000 (Kč)
+Název sestavy: """"Sestava_test_max""""
+Výchozí cena za proklik: 1 000,00 (Kč)
+5. Klik na """"Pokračovat""""
+6. Klik na """"Banner""""
+7. Klik na """"Pokračovat""""
+8. Klik na """"Externí kód""""
+9. Vyplnit formulář následujícími daty:
+Rozměry: 970x210
+Název externího kódu: Banner_test
+Externí kód (vložit bez oblých závorek):  ( <script language=""""javascript"""" src=""""https://track.adform.net/adfscript/?bn=38520900;encodedclick=__SKLIK_CLICKTHRU_URL__""""></script> )
+10. Klik na """"Vytvořit externí kód""""
+11. Na načteném náhledu kampaně ověřím, že se vytvořila s korektními daty. 
+12. Klik na """"Reklamy""""
+13. Najet kurzorem na vytvořenou reklamu a klik na ikonku oka
+14. Vizuální kontrola správného zobrazení banneru","","",""
+"C5","denní rozpočet [5 000 000Kč(max)]způsob zpoplatnění [CPT] cena za tisíc zobrazení [5 000,00 Kč(max)] Rozměr banneru[970x210] Externí kód banneru [opravený syntax]","Kampaň je úspěšně vytvořena s odpovídajícími daty a bannerem.
+    
+     ![](index.php?/attachments/get/13)  ![](index.php?/attachments/get/14) 
+    
+Request z DevTools odeslaný v okamžiku vytvoření kampaně:
+
+URL: https://www.sklik.cz/api/v1/campaigns
+
+Payload: 
+{items: [{paymentMethod: """"cpm"""", type: """"context"""", name: """"Kampaň_test_cpt_max"""",…}]}
+
+Response:
+{
+    """"items"""": [
+        {
+            """"groups"""": [
+                {
+                    """"adverts"""": {
+                        """"externalAds"""": [
+                            672491011
+                        ]
+                    },
+                    """"dynamicTemplates"""": [],
+                    """"id"""": 156726504,
+                    """"intents"""": [],
+                    """"interests"""": [],
+                    """"keywords"""": [],
+                    """"negativePureRetargetingItemIds"""": [],
+                    """"placements"""": [],
+                    """"productGroups"""": [],
+                    """"pureRetargetingItemIds"""": [],
+                    """"topicCategoryIds"""": [],
+                    """"topics"""": []
+                }
+            ],
+            """"id"""": 7230188
+        }
+    ]
+}","Uživatel používá Google Chrome Verze 135.0.7049.115 (Oficiální sestavení) (64bitový)
+Uživatel má vypnutý adblock (pro správné zobrazení banneru)
+Uživatel má účet na stránce sklik.cz a je přihlášen.","","1. Klik na """"Kampaně"""" (menu horní lišta)
+2. Klik na """"Vytvořit kampaň""""
+3. Klik na """"Obsahová kampaň""""
+4. Vyplnit formulář následujícími daty:
+Název Kampaně: """"Kampaň_test_cpt_max""""
+Nastavení Rozpočtu (Denní rozpočet): 5 000 000 (Kč)
+Název sestavy: """"Sestava_test_max""""
+Výchozí cena za tisíc zobrazení: 5 000,00 (Kč)
+5. Klik na """"Pokračovat""""
+6. Klik na """"Banner""""
+7. Klik na """"Pokračovat""""
+8. Klik na """"Externí kód""""
+9. Vyplnit formulář následujícími daty:
+Rozměry: 970x210
+Název externího kódu: Banner_test
+Externí kód (vložit bez oblých závorek):  ( <script language=""""javascript"""" src=""""https://track.adform.net/adfscript/?bn=38520900;encodedclick=__SKLIK_CLICKTHRU_URL__""""></script> )
+10. Klik na """"Vytvořit externí kód""""
+11. Na načteném náhledu kampaně ověřím, že se vytvořila s korektními daty. 
+12. Klik na """"Reklamy""""
+13. Najet kurzorem na vytvořenou reklamu a klik na ikonku oka
+14. Vizuální kontrola správného zobrazení banneru","","",""
+"C6","denní rozpočet [30 Kč(min)]způsob zpoplatnění [CPC] cena za proklik [1 Kč(min)] Rozměr banneru[970x210] Externí kód banneru [opravený syntax]","Kampaň je úspěšně vytvořena s odpovídajícími daty a bannerem.
+        
+   ![](index.php?/attachments/get/19)    ![](index.php?/attachments/get/20) 
+    
+Request z DevTools odeslaný v okamžiku vytvoření kampaně:
+
+URL: https://www.sklik.cz/api/v1/campaigns
+
+Payload: 
+{items: [{paymentMethod: """"cpc"""", type: """"context"""", name: """"Kampaň_test_cpc_min"""",…}]}
+
+Response:
+{
+    """"items"""": [
+        {
+            """"groups"""": [
+                {
+                    """"adverts"""": {
+                        """"externalAds"""": [
+                            672491438
+                        ]
+                    },
+                    """"dynamicTemplates"""": [],
+                    """"id"""": 156726890,
+                    """"intents"""": [],
+                    """"interests"""": [],
+                    """"keywords"""": [],
+                    """"negativePureRetargetingItemIds"""": [],
+                    """"placements"""": [],
+                    """"productGroups"""": [],
+                    """"pureRetargetingItemIds"""": [],
+                    """"topicCategoryIds"""": [],
+                    """"topics"""": []
+                }
+            ],
+            """"id"""": 7230205
+        }
+    ]
+}","Uživatel používá Google Chrome Verze 135.0.7049.115 (Oficiální sestavení) (64bitový)
+Uživatel má vypnutý adblock (pro správné zobrazení banneru)
+Uživatel má účet na stránce sklik.cz a je přihlášen.","","1. Klik na """"Kampaně"""" (menu horní lišta)
+2. Klik na """"Vytvořit kampaň""""
+3. Klik na """"Obsahová kampaň""""
+4. Vyplnit formulář následujícími daty:
+Název Kampaně: """"Kampaň_test_cpc_min""""
+Nastavení Rozpočtu (Denní rozpočet): 30 (Kč)
+5. Varovná hláška: Máte zvolen nepoměr mezi max. CPC a denním rozpočtem. Může dojít k přečerpání denního rozpočtu. Klik na OK
+6. Pokračovat ve vyplňování formuláře
+Název sestavy: """"Sestava_test_min""""
+Výchozí cena za proklik: 5 (Kč)
+7. Klik na """"Pokračovat""""
+8. Klik na """"Banner""""
+9. Klik na """"Pokračovat""""
+10. Klik na """"Externí kód""""
+11. Vyplnit formulář následujícími daty:
+Rozměry: 970x210
+Název externího kódu: Banner_test
+Externí kód (vložit bez oblých závorek):  ( <script language=""""javascript"""" src=""""https://track.adform.net/adfscript/?bn=38520900;encodedclick=__SKLIK_CLICKTHRU_URL__""""></script> )
+12. Klik na """"Vytvořit externí kód""""
+13. Na načteném náhledu kampaně ověřím, že se vytvořila s korektními daty. 
+14. Klik na """"Reklamy""""
+15. Najet kurzorem na vytvořenou reklamu a klik na ikonku oka
+16. Vizuální kontrola správného zobrazení banneru","","",""
+"C7","denní rozpočet [30 Kč(min)]způsob zpoplatnění [CPT] cena za tisíc zobrazení [5 Kč(min)] Rozměr banneru[970x210] Externí kód banneru [opravený syntax]","Kampaň je úspěšně vytvořena s odpovídajícími daty a bannerem.
+        
+     ![](index.php?/attachments/get/21)  ![](index.php?/attachments/get/22) 
+    
+Request z DevTools odeslaný v okamžiku vytvoření kampaně:
+
+URL: https://www.sklik.cz/api/v1/campaigns
+
+Payload: 
+{
+    """"items"""": [
+        {
+            """"groups"""": [
+                {
+                    """"adverts"""": {
+                        """"externalAds"""": [
+                            672491820
+                        ]
+                    },
+                    """"dynamicTemplates"""": [],
+                    """"id"""": 156726921,
+                    """"intents"""": [],
+                    """"interests"""": [],
+                    """"keywords"""": [],
+                    """"negativePureRetargetingItemIds"""": [],
+                    """"placements"""": [],
+                    """"productGroups"""": [],
+                    """"pureRetargetingItemIds"""": [],
+                    """"topicCategoryIds"""": [],
+                    """"topics"""": []
+                }
+            ],
+            """"id"""": 7230215
+        }
+    ]
+}","Uživatel používá Google Chrome Verze 135.0.7049.115 (Oficiální sestavení) (64bitový)
+Uživatel má vypnutý adblock (pro správné zobrazení banneru)
+Uživatel má účet na stránce sklik.cz a je přihlášen.","","1. Klik na """"Kampaně"""" (menu horní lišta)
+2. Klik na """"Vytvořit kampaň""""
+3. Klik na """"Obsahová kampaň""""
+4. Vyplnit formulář následujícími daty:
+Název Kampaně: """"Kampaň_test_cpc_min""""
+Nastavení Rozpočtu (Denní rozpočet): 30 (Kč)
+5. Varovná hláška: Máte zvolen nepoměr mezi max. CPC a denním rozpočtem. Může dojít k přečerpání denního rozpočtu. Klik na OK
+6. Pokračovat ve vyplňování formuláře
+Název sestavy: """"Sestava_test_min""""
+Výchozí cena za proklik: 5 (Kč)
+7. Klik na """"Pokračovat""""
+8. Klik na """"Banner""""
+9. Klik na """"Pokračovat""""
+10. Klik na """"Externí kód""""
+11. Vyplnit formulář následujícími daty:
+Rozměry: 970x210
+Název externího kódu: Banner_test
+Externí kód (vložit bez oblých závorek):  ( <script language=""""javascript"""" src=""""https://track.adform.net/adfscript/?bn=38520900;encodedclick=__SKLIK_CLICKTHRU_URL__""""></script> )
+12. Klik na """"Vytvořit externí kód""""
+13. Na načteném náhledu kampaně ověřím, že se vytvořila s korektními daty. 
+14. Klik na """"Reklamy""""
+15. Najet kurzorem na vytvořenou reklamu a klik na ikonku oka
+16. Vizuální kontrola správného zobrazení banneru","","",""
