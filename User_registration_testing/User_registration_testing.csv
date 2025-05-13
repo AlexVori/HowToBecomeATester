@@ -1,0 +1,670 @@
+"ID","Title","Assigned To","Automation Type","Case Assigned To","Case ID","Comment","Defects","Elapsed","Estimate","Expected Result","Forecast","Goals","In Progress","Mission","Plan","Plan ID","Preconditions","Priority","References","Run","Run Configuration","Run ID","Section","Section Depth","Section Description","Section Hierarchy","Status","Steps","Steps","Steps (Actual Result)","Steps (Additional Info)","Steps (Expected Result)","Steps (References)","Steps (Shared step ID)","Steps (Status)","Steps (Step)","Template","Tested By","Tested On","Type","Version"
+"T114","Všechny údaje vyplněny korektně (fyzická osoba, adresa, předvolba +420)",""," None","","C95","Uživatel je úspěšně zaregistrován.
+V databázi je v kolonce telefoního čísla: 2147483647,
+což je nejvyšší hodnota, které mohou nabývat 32bitové celočíselné proměnné se znaménkem. To značí přetečení proměné, ve které je uloženo tel. číslo.","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno Jan Novák proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: +420111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 10:28 AM","Other",""
+"T159","Všechny údaje vyplněny korektně (právnická osoba, IČO, telefon bez předvolby)",""," None","","C152","","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno Jan Novák proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Právnická osoba
+IČO: 71185232
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:35 AM","Other",""
+"T446","Jméno a Příjmení: Neplatné znaky [@@:1*23]",""," None","","C290","Uživatel je úspěšně registrován a zapsán do tabulky.","","","","Červená hláška nad polem jméno: """"Jméno obsahuje neplatné znaky, použijte prosím pouze písmena.""""
+Červená hláška nad polem příjmení: """"Příjemné obsahuje neplatné znaky, použijte prosím pouze písmena.""""
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: @@:1*23
+Příjmení: @@:1*23
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 8:48 AM","Other",""
+"T158","Jméno: Horní limit OK [30 znaků]",""," None","","C151","","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww novak proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: wwwwwwwwwwwwwwwwwwwwwwwwwwwwww (30 characters)
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:38 AM","Other",""
+"T143","Jméno: Horní limit NOK  [31 znaků]",""," None","","C124","Hláška: """"Registrace na jméno wwwwwwwwwwwwwwwwwwwwwwwwwwwwwww Novák proběhla úspěšně""""
+
+V databázi je jméno oříznuto na 30 charakterů.","","","","Červená hláška pod polem jméno: """"Toto pole má špatný formát. Maximální počet znaků pro jméno je 30""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""
+","","","","","","","Načtené stránky: 
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwa (31 characters)
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/13/2025 4:39 PM","Other",""
+"T146","Příjmení: Horní limit OK  [30 znaků]",""," None","","C136","","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww novak proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: wwwwwwwwwwwwwwwwwwwwwwwwwwwwww (30 characters)
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:38 AM","Other",""
+"T147","Příjmení: Horní limit NOK   [31 znaků]",""," None","","C137","Hláška: """"Registrace na jméno Jan wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwa proběhla úspěšně""""
+
+V databázi je jméno oříznuto na 30 charakterů.","","","","Červená hláška pod polem příjmení: """"Toto pole má špatný formát. Maximální počet znaků pro příjmení je 30""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje."""" 
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwa (31 characters)
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:39 AM","Other",""
+"T148","Telefon: Horní limit NOK, formát NOK   [21 znaků]",""," None","","C139","Chybová hláška: """"Toto pole má špatný formát, použijte tvar 777123456""""","","","","Červená hláška pod polem telefon: """"Toto pole má špatný formát, použijte tvar 777123456""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje."""" 
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: +11111111111111111111 (21 znaků)
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:39 AM","Other",""
+"T164","Telefon: Formát NOK   [000000000]",""," None","","C157","Uživatel je úspěšně zaregistrován.
+V databázi je v kolonce telefonního čísla 0.","","","","Červená hláška pod polem telefon: """"Toto pole má špatný formát, použijte tvar 777123456""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje."""" 
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 000000000
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:43 AM","Other",""
+"T167","Telefon: Formát NOK   [000000123]",""," None","","C168","Uživatel je úspěšně zaregistrován.
+
+V databázi je v kolonce telefonního čísla 123, což značí špatné ověřování tel. čísla. Program se dívá na jednu nebo více 0 na začátku tel. čísla jako na korektní číslici, do tabulky ale zapíše pouze čísla následující za 0.
+","","","","Červená hláška pod polem telefon: """"Toto pole má špatný formát, použijte tvar 777123456""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje."""" 
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 000000123
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 10:04 AM","Other",""
+"T165","Telefon: Formát NOK   [+123000000000]",""," None","","C159","Uživatel je úspěšně zaregistrován.
+V databázi je v kolonce telefoního čísla: 2147483647,
+což je nejvyšší hodnota, které mohou nabývat 32bitové celočíselné proměnné se znaménkem. To značí přetečení proměné, ve které je uloženo tel. číslo.
+","","","","Červená hláška pod polem telefon: """"Toto pole má špatný formát, použijte tvar 777123456""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje."""" 
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: +123000000000
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:47 AM","Other",""
+"T149","Email: Horní limit OK  [50 znaků]",""," None","","C141","","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno Jan Novák proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: test@DcS5CxPIccF3govaXeGXZ3NA7bkeQu1mrOkqQo.museum (50 znaků)
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:48 AM","Other",""
+"T150","Email: Horní limit NOK  [51 znaků]",""," None","","C142","Uživatel je úspěšně zaregistrován. Email je v tabulce oříznutý na 50 znaků.","","","","Červená hláška pod polem příjmení: """"Toto pole má špatný formát. Maximální počet znaků pro email je 50""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: test1@DcS5CxPIccF3govaXeGXZ3NA7bkeQu1mrOkqQo.museum (51 znaků)
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:49 AM","Other",""
+"T160","Email: Formát OK [ ma.il@háčky.čárky.example.com]",""," None","","C153","Chybová hláška pod polem Email: """"Toto pole má špatný formát, použijte tvar xxx@yyyyy.zzz""""
+Tato emailová adresa je ovšem korektní. Problém bude nejspíše v netolerování háčků a čárek.","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno Jan Novák proběhla úspěšně""""
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: ma.il@háčky.čárky.example.com
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:51 AM","Other",""
+"T163","Email: Formát norma RFC2822 OK [!#$%&'*+-/=.?^_`{|}~@[IPv6:0123:4567:89AB:CDEF:0123:4567:89AB:CDEF]]",""," None","","C156","Nutno vykomunikovat se zákazníkem, zda chce aby zadané emaily mohli splňovat normu RFC2822","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno Jan Novák proběhla úspěšně""""
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Retest","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: !#$%&'*+-/=.?^_`{|}~@[IPv6:0123:4567:89AB:CDEF:0123:4567:89AB:CDEF]
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:52 AM","Other",""
+"T162","Email: Formát NOK [x@.cz]",""," None","","C155","Chybová hláška: """"Toto pole má špatný formát, použijte tvar xxx@yyyyy.zzz""""","","","","Červená hláška pod polem email: """"Toto pole má špatný formát, použijte tvar xxx@yyyyy.zzz""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: x@.cz
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:52 AM","Other",""
+"T161","Email: Formát NOK [spatnyemailseznam.cz]",""," None","","C154","Chybová hláška: """"Toto pole má špatný formát, použijte tvar xxx@yyyyy.zzz""""","","","","Červená hláška pod polem email: """"Toto pole má špatný formát, použijte tvar xxx@yyyyy.zzz""""
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: spatnyemailseznam.cz
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:53 AM","Other",""
+"T151","Adresa: Horní limit OK  [300 znaků]",""," None","","C143","","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno Jan Novák proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 00Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 00Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 00Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 000000000000000000000000000000 (300 znaků)
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:54 AM","Other",""
+"T152","Adresa: Horní limit NOK  [301 znaků]",""," None","","C144","Uživatel je úspěšně zaregistrován.
+V tabulce je adresa oříznuta na 300 znaků","","","","Červená hláška pod polem adresa: """"Toto pole má špatný formát. Maximální počet znaků pro email je 301""""
+
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 00Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 00Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 00Nábřeží Svazu protifašistických bojovníků 20, Ostrava-Poruba, 708 0000000000000000000000000000001 (301 znaků)
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:54 AM","Other",""
+"T153","IČO: Horní limit NOK  [12 znaků]",""," None","","C145","Chybová hláška: """"Toto pole má špatný formát, použijte tvar 25596641, tj. 8 cislic, posledni je kontrolni (vice wiki ICO)""""
+","","","","Červená hláška pod polem adresa: """"Toto pole má špatný formát, použijte tvar 25596641, tj. 8 cislic, posledni je kontrolni (vice wiki ICO)""""
+
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Právnická osoba
+IČO: 123456781111
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:55 AM","Other",""
+"T154","IČO: formát NOK  [12345678]",""," None","","C146","Chybová hláška: """"Toto pole má špatný formát, použijte tvar 25596641, tj. 8 cislic, posledni je kontrolni (vice wiki ICO)""""
+","","","","Červená hláška pod polem adresa: """"Toto pole má špatný formát, použijte tvar 25596641, tj. 8 cislic, posledni je kontrolni (vice wiki ICO)""""
+
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Právnická osoba
+IČO: 12345678
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:56 AM","Other",""
+"T155","Komentář: Horní limit OK  [1000 znaků]",""," None","","C148","","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno Jan Novák proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení: """"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc magna leo, pulvinar eu metus eu, rutrum ornare nisi. Nullam fringilla ultrices nisi, eu luctus velit elementum eu. Ut tincidunt fermentum sapien, eu mollis leo pellentesque vel. Nam a bibendum massa. Duis semper imperdiet nunc, a mattis quam rhoncus non. Aliquam at magna in neque sodales eleifend. Curabitur semper ut quam quis aliquet. Maecenas malesuada nulla ac dui maximus eleifend. Nulla ac neque nec ligula accumsan pellentesque vitae id massa. Nam gravida neque ac purus imperdiet, at iaculis quam condimentum. Nullam ac massa mauris. Suspendisse sed tortor pharetra, pulvinar est iaculis, aliquet nisi. Fusce a elit et augue eleifend fringilla sed vel odio. Curabitur sagittis diam ac nulla viverra venenatis.Maecenas at porttitor nulla. Proin diam magna, condimentum id condimentum nec, aliquam ut sapien. Vivamus iaculis odio sagittis feugiat ultrices. Vestibulum massa ante, mattis nec elementum vel, mattis efficitur ante. Pe"""" (1000 znaků)
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:56 AM","Other",""
+"T156","Komentář: Horní limit NOK  [1001 znaků]",""," None","","C149","Uživatel je úspěšně registrován. V tabulce je komentář oříznut na 1000 znaků.","","","","Červená hláška pod polem Komentáře a dotazy ke školení: """"Toto pole má špatný formát. Maximální počet znaků pro email je 1000""""
+
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""
+
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení: """"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc magna leo, pulvinar eu metus eu, rutrum ornare nisi. Nullam fringilla ultrices nisi, eu luctus velit elementum eu. Ut tincidunt fermentum sapien, eu mollis leo pellentesque vel. Nam a bibendum massa. Duis semper imperdiet nunc, a mattis quam rhoncus non. Aliquam at magna in neque sodales eleifend. Curabitur semper ut quam quis aliquet. Maecenas malesuada nulla ac dui maximus eleifend. Nulla ac neque nec ligula accumsan pellentesque vitae id massa. Nam gravida neque ac purus imperdiet, at iaculis quam condimentum. Nullam ac massa mauris. Suspendisse sed tortor pharetra, pulvinar est iaculis, aliquet nisi. Fusce a elit et augue eleifend fringilla sed vel odio. Curabitur sagittis diam ac nulla viverra venenatis.Maecenas at porttitor nulla. Proin diam magna, condimentum id condimentum nec, aliquam ut sapien. Vivamus iaculis odio sagittis feugiat ultrices. Vestibulum massa ante, mattis nec elementum vel, mattis efficitur ante. Pe1"""" (1001 znaků)
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:56 AM","Other",""
+"T443","Počet osob: záporné číslo  [-42]",""," None","","C288","Uživatel je úspěšně registrován. V tabulce registrovaných je záporný počet osob","","","","Červená hláška pod polem počet osob a dotazy ke školení: """"Zadejte celé kladné číslo""""
+
+Červená hláška nad tlačítkem chci se registrovat: """"Registrace zákazníka zamítnuta: Nesprávně vyplněné údaje.""""
+
+ 
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: -42
+Komentáře a dotazy ke školení: 
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 8:33 AM","Other",""
+"T444","Počet osob: kladné číslo vyšší než max. hodnota 32bitových celočíselných proměnných  [>2147483647]",""," None","","C289","Uživatel je úspěšně zaregistrován. Do kolonky počtu osob je v tabulce zapsáno 2147483647.
+
+
+TODO: Doptat se na limity v kolonce počet osob.","","","","Dle požadavků zákazníka.
+TODO: vyptat se na limit.
+ 
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Retest","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 2147483648
+Komentáře a dotazy ke školení: 
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 8:35 AM","Other",""
+"T157","Nepovinné parametry nevyplněny (komentář, jméno a příjmení)",""," None","","C150","Jméno a příjmení, bere registrační formulář jako povinné údaje, což koliduje se zadáním.
+ ","","","","Červená hláška nad tlačítkem chci se registrovat: """"Registrace na jméno proběhla úspěšně"""" 
+
+V tabulce registrovaných se po znovunačtení objeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno:
+Příjmení: 
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:58 AM","Other",""
+"T166","Registrace duplikátního uživatele (komentář, jméno a příjmení)",""," None","","C167","Uživatel je úspěšně zaregistrován, i přesto že uživatel s identickými údaji již existuje.","","","","Červená hláška nad tlačítkem chci se registrovat: """"Uživatel s těmito údaji je už registrovaný"""" 
+
+V tabulce registrovaných se neobjeví dvě duplikátní registrace.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Failed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných
+4. Zopakujte kroky 1.-3.","","","","","","","","","Test Case (Text)","Johny Tester","2/14/2025 9:59 AM","Other",""
+"T455","Nevyplněné pole adresa",""," None","","C291","","","","","Červená hláška pod polem adresa: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: 
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:09 AM","Other",""
+"T456","Nevyplněné pole Název kurzu",""," None","","C292","","","","","Červená hláška pod polem Název kurzu: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu:
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:09 AM","Other",""
+"T457","Nevyplněné pole Fyzická osoba/Právnická osoba",""," None","","C293","","","","","Červená hláška pod polem Fyzická osoba/právnická osoba: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu: Jak se stát testerem
+Jméno: Jan 
+Příjmení: Novák
+Nezaškrtnu ani právnickou ani fyzickou osobu
+Email: aa@bb.cc
+Telefon:111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:09 AM","Other",""
+"T458","Nevyplněné pole Adresa",""," None","","C294","","","","","Červená hláška pod polem Adresa: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu:
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: 
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:09 AM","Other",""
+"T459","Nevyplněné pole IČO",""," None","","C295","","","","","Červená hláška pod polem IČO: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu:
+Jméno: Jan 
+Příjmení: Novák
+Právnická osoba
+IČO: 
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:09 AM","Other",""
+"T460","Nevyplněné pole Email",""," None","","C296","","","","","Červená hláška pod polem Email: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu:
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: 
+Telefon: 111222333
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:09 AM","Other",""
+"T461","Nevyplněné pole Telefon",""," None","","C297","","","","","Červená hláška pod polem Telefon: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu:
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 
+Počet osob: 1
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:10 AM","Other",""
+"T462","Nevyplněné pole Počet osob",""," None","","C298","","","","","Červená hláška pod polem počet osob: """"Toto pole nemůže být prázdné"""" 
+
+V tabulce registrovaných se po znovunačtení neobjeví uživatel s odpovídajícími údaji.
+","","","","","","","Načtené stránky:
+http://testovani.kitner.cz/regkurz/
+http://testovani.kitner.cz/regkurz/list.php
+","Medium","","Voronin","","R6","Voronin","0","","Voronin","Passed","1. Vyplň tabulku pomocí následujících dat:
+Název kurzu:
+Jméno: Jan 
+Příjmení: Novák
+Fyzická osoba
+Adresa: Brno 20
+Email: aa@bb.cc
+Telefon: 111222333
+Počet osob: 
+Komentáře a dotazy ke školení:
+Nezaškrtnout souhlas se zpracování osobních údajů. 
+2. Klikni na """"Chci se registrovat""""
+3. Ověřit údaje v tabulce seznamu registrovaných","","","","","","","","","Test Case (Text)","Johny Tester","2/17/2025 9:10 AM","Other",""

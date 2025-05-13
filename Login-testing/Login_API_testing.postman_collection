@@ -1,0 +1,2206 @@
+{
+	"info": {
+		"_postman_id": "32b63a80-2d4e-4616-bc6f-fa96bb374a3e",
+		"name": "JSST7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40176260"
+	},
+	"item": [
+		{
+			"name": "Chrome login tests",
+			"item": [
+				{
+					"name": "Login [novak] správné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"200\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"correct\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak\",\"password\":\"{{heslo novak}}\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [novak] špatné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak\",\"password\":\"{{heslo novak}}1\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "testovani.kitner.cz/login_app/userauth.php",
+							"host": [
+								"testovani",
+								"kitner",
+								"cz"
+							],
+							"path": [
+								"login_app",
+								"userauth.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [novak] žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"     pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak\",\"password\":\"{{heslo novak}}1\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "testovani.kitner.cz/login_app/userauth.php",
+							"host": [
+								"testovani",
+								"kitner",
+								"cz"
+							],
+							"path": [
+								"login_app",
+								"userauth.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] špatné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ spatne heslo\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\",\"password\":\"{{heslo admin}}1\",\"useragent\":\"Chrome\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ spatne heslo\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\",\"password\":\"{{heslo admin}}1\",\"useragent\":\"Chrome\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] správné heslo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"200\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"correct\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\",\"password\":\"{{heslo admin}}\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Neexistující login správné heslo pro admin účet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1\",\"password\":\"{{heslo admin}}\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Neexistující login správné heslo pro novak účet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak1\",\"password\":\"{{heslo novak}}\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Neexistující login žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasd\",\"password\":\"\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dlouhý login žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 500\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"500\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ (empty)\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"password\":\"\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] dlouhé heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasd\",\"password\":\"\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [novak] dlouhé heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasd\",\"password\":\"\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login prázdné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ chybi prihlasovacijmeno\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"chybi prihlasovacijmeno\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"\",\"password\":\"\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login admin heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ chybi prihlasovacijmeno\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"chybi prihlasovacijmeno\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"\",\"password\":\"{{heslo admin}}\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login novak heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ chybi prihlasovacijmeno\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"chybi prihlasovacijmeno\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"\",\"password\":\"{{heslo novak}}\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login neexistující heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"All headers are present\", function () {\r",
+									"    pm.response.to.have.header(\"Server\");\r",
+									"    pm.response.to.have.header(\"Date\");\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    pm.response.to.have.header(\"Transfer-encoding\");\r",
+									"    pm.response.to.have.header(\"Connection\");\r",
+									"    pm.response.to.have.header(\"X-Powered-By\");\r",
+									"    pm.response.to.have.header(\"Cache-control\");\r",
+									"    pm.response.to.have.header(\"Pragma\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1\",\"password\":\"{{heslo admin}}{{heslo novak}}\",\"useragent\":\"Chrome\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mozilla login tests",
+			"item": [
+				{
+					"name": "Login [novak] správné heslo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"200\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"correct\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"All headers are present\", function () {\r",
+									"    pm.response.to.have.header(\"Server\");\r",
+									"    pm.response.to.have.header(\"Date\");\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    pm.response.to.have.header(\"Transfer-encoding\");\r",
+									"    pm.response.to.have.header(\"Connection\");\r",
+									"    pm.response.to.have.header(\"X-Powered-By\");\r",
+									"    pm.response.to.have.header(\"Cache-control\");\r",
+									"    pm.response.to.have.header(\"Pragma\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak\",\"password\":\"{{heslo novak}}\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [novak] špatné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak\",\"password\":\"{{heslo novak}}1\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "testovani.kitner.cz/login_app/userauth.php",
+							"host": [
+								"testovani",
+								"kitner",
+								"cz"
+							],
+							"path": [
+								"login_app",
+								"userauth.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [novak] žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak\",\"password\":\"{{heslo novak}}1\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "testovani.kitner.cz/login_app/userauth.php",
+							"host": [
+								"testovani",
+								"kitner",
+								"cz"
+							],
+							"path": [
+								"login_app",
+								"userauth.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] špatné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ spatne heslo\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\",\"password\":\"{{heslo admin}}1\",\"useragent\":\"Mozilla\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ spatne heslo\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"spatne heslo\",);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\",\"password\":\"{{heslo admin}}1\",\"useragent\":\"Mozilla\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] správné heslo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response equ 200\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"200\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"correct\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"All headers are present\", function () {\r",
+									"    pm.response.to.have.header(\"Server\");\r",
+									"    pm.response.to.have.header(\"Date\");\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    pm.response.to.have.header(\"Transfer-encoding\");\r",
+									"    pm.response.to.have.header(\"Connection\");\r",
+									"    pm.response.to.have.header(\"X-Powered-By\");\r",
+									"    pm.response.to.have.header(\"Cache-control\");\r",
+									"    pm.response.to.have.header(\"Pragma\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin\",\"password\":\"{{heslo admin}}\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin1] správné heslo pro admin účet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1\",\"password\":\"{{heslo admin}}\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [novak1] správné heslo pro novak účet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"novak1\",\"password\":\"{{heslo novak}}\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Neexistující login žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasd\",\"password\":\"\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dlouhý login žádné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 500\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"500\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ (empty)\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"password\":\"\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [admin] dlouhé heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasd\",\"password\":\"\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login [novak] dlouhé heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1aasd\",\"password\":\"\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login prázdné heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ chybi prihlasovacijmeno\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"chybi prihlasovacijmeno\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"\",\"password\":\"\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login admin heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ chybi prihlasovacijmeno\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"chybi prihlasovacijmeno\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"\",\"password\":\"{{heslo admin}}\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login novak heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ chybi prihlasovacijmeno\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"chybi prihlasovacijmeno\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"\",\"password\":\"{{heslo novak}}\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prázdný login neexistující heslo",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () { \r",
+									"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON response is 403\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.response).to.eql(\"403\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"JSON reason equ correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.reason).to.eql(\"neexistujici uzivatel\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"admin1\",\"password\":\"{{heslo admin}}{{heslo novak}}\",\"useragent\":\"Mozilla\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{kitner testovani}}",
+							"host": [
+								"{{kitner testovani}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "google.cz",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"q\":\"novak\",\"useragent\":\"Mozilla\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "google.cz",
+					"host": [
+						"google",
+						"cz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rohlik.cz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"rohlik\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () { \r",
+							"    pm.expect(pm.response.responseTime).to.be.below(parseInt(pm.globals.get(\"target_response_time\")));\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "rohlik.cz",
+					"host": [
+						"rohlik",
+						"cz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seznam.cz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"seznam\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "seznam.cz",
+					"host": [
+						"seznam",
+						"cz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cernyrytir.cz",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Registrace\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "825714",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Vori",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "cernyrytir.cz",
+					"host": [
+						"cernyrytir",
+						"cz"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
