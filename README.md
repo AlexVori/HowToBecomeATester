@@ -1,2 +1,2 @@
-# How To Become a Tester
-Test Cases and bug reports done in the course "How to become a tester", lead by Radek Kitner
+# Idoklad shipping address testing
+Website Idoklad.cz added a new function that allows user to enter a shipping address, different from the default address. Here you can find test cases and bug reports verifying this function.
